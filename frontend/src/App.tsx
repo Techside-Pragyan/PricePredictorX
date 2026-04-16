@@ -92,7 +92,7 @@ function App() {
           </div>
           <div className="stat-item">
             <span className="stat-label flex items-center gap-2"><Target size={16}/> Model Accuracy (R²)</span>
-            <span className="stat-value">{predictions ? (predictions.metrics.R2 * 100).toFixed(2) : '--'}%</span>
+            <span className="stat-value">{predictions ? (predictions.metrics.LSTM.R2 * 100).toFixed(2) : '--'}%</span>
           </div>
           <div className="stat-item">
             <span className="stat-label flex items-center gap-2"><TrendingUp size={16}/> 7D Price Target</span>
@@ -168,12 +168,20 @@ function App() {
           <h3 style={{ marginBottom: '1rem' }}>Model Performance</h3>
           <div className="stats-grid">
             <div className="stat-item">
-              <span className="stat-label">Mean Absolute Error (MAE)</span>
-              <span className="stat-value">{predictions ? predictions.metrics.MAE.toFixed(4) : '--'}</span>
+              <span className="stat-label">LSTM R²</span>
+              <span className="stat-value">{predictions ? (predictions.metrics.LSTM.R2 * 100).toFixed(2) : '--'}%</span>
             </div>
             <div className="stat-item">
-              <span className="stat-label">RMSE</span>
-              <span className="stat-value">{predictions ? predictions.metrics.RMSE.toFixed(4) : '--'}</span>
+              <span className="stat-label">RF R²</span>
+              <span className="stat-value">{predictions ? (predictions.metrics.RandomForest.R2 * 100).toFixed(2) : '--'}%</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-label">LR R²</span>
+              <span className="stat-value">{predictions ? (predictions.metrics.LinearRegression.R2 * 100).toFixed(2) : '--'}%</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-label">LSTM MAE</span>
+              <span className="stat-value">{predictions ? predictions.metrics.LSTM.MAE.toFixed(2) : '--'}</span>
             </div>
           </div>
           <div style={{ marginTop: '1.5rem', color: 'var(--text-muted)', fontSize: '0.875rem' }}>
