@@ -1,0 +1,14 @@
+numpy
+pandas
+yfinance
+pandas_ta
+scikit-learn
+tensorflow
+fastapi
+uvicorn
+python-multipart
+pydantic
+matplotlib
+plotly
+python-dotenv
+joblib
